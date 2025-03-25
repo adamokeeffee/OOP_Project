@@ -55,7 +55,7 @@ public class PatientPage {
             case 1:
                 System.out.println("This is your upcoming procedures");
                 if(patientProcedures!=null){
-                    System.out.println(patientProcedures.toString());
+                    System.out.println(patientProcedures);
                 }
                 else
                 {
