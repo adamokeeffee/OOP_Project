@@ -52,6 +52,7 @@ public class PatientPage {
                 {
                     System.out.println("There is no up coming procedures");
                 }
+                break;
             case 2:
                 if(patientBill>0){
                     System.out.println("This is your outstanding bill" + patientBill);
@@ -59,10 +60,18 @@ public class PatientPage {
                 else{
                     System.out.println("There is no outstanding bill");
                 }
-
+                break;
             case 3:
-
+                System.out.println("This is your personal information");
+                System.out.println("Name: " + patientName);
+                System.out.println("Age: " + patientAge);
+                System.out.println("Address: " + patientAddress);
+                System.out.println("Email: " + patientEmail);
+                System.out.println("Insurance Number: " + patientInsurance);
+                break;
             default:
+                System.out.println("Invalid choice");
+                break;
         }
     }
 }
