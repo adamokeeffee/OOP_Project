@@ -13,11 +13,20 @@ public class PatientPage {
     private String patientProcedures = null;
     private float patientBill = 0;
 
-    Connection connection = DriverManager.getConnection("jdbc:mysql//localhost/database", "root", "password");
+    Connection connection;
+
+    {
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql//localhost/database", "root", "password");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     Scanner scanner = new Scanner(System.in);
     String selectsql = "SELECT p.name, p.age, p.insuranceNumber, p.address, p.email, p.procedures, p.bill" + "FROM patient p";
 
-    public PatientPage() throws SQLException
+    public void PatientPage() throws SQLException
     {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery(selectsql);
