@@ -48,7 +48,17 @@ public class PatientPage {
                 if(patientProcedures!=null){
                     System.out.println(patientProcedures.toString());
                 }
+                else
+                {
+                    System.out.println("There is no up coming procedures");
+                }
             case 2:
+                if(patientBill>0){
+                    System.out.println("This is your outstanding bill" + patientBill);
+                }
+                else{
+                    System.out.println("There is no outstanding bill");
+                }
 
             case 3:
 
