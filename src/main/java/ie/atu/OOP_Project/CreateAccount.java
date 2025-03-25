@@ -33,7 +33,13 @@ public class CreateAccount {
             ps.setString(4, address);
             ps.setString(5, insuranceNumber);
 
-            int
+            int rows = ps.executeUpdate();
+            if(rows > 0){
+                System.out.println("Account Created, You can now login");
+            }
+        }
+        catch (SQLException e){
+            System.out.println(e);
         }
     }
 }
