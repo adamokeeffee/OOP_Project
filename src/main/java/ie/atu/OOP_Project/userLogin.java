@@ -41,12 +41,27 @@ public class userLogin {
                 System.out.println("Please enter password");
                 String inputPassword = scanner.nextLine();
 
-
+                if(username != null && password != null && username.equals(inputUsername) && password.equals(inputPassword))
+                {
+                    System.out.println("Login Successful");
+                    PatientPage PatientPage = new PatientPage();
+                    PatientPage.PatientPage();
+                }
+                else
+                {
+                    System.out.println("Login Failed");
+                    connection.close();
+                }
             }
+
         }
         catch (SQLException e)
         {
             throw new RuntimeException(e);
+        }
+        finally {
+            connection.close();
+            scanner.close();
         }
 
     }
